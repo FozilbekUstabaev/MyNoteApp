@@ -9,7 +9,7 @@ import com.example.mynoteapp.domain.model.Note
 
 class NoteAdapter(
     private val onItemClick: (Note) -> Unit
-) : RecyclerView.Adapter<NoteAdapter.ViewHolder>() {
+) : RecyclerView.Adapter<NoteAdapter.ItemNoteViewHolder>() {
 
     private var list = listOf<Note>()
 
@@ -19,7 +19,7 @@ class NoteAdapter(
         notifyDataSetChanged()
     }
 
-    inner class ViewHolder(private val binding: ItemNoteBinding) :
+    inner class ItemNoteViewHolder(private val binding: ItemNoteBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun onBind(note: Note) = with(binding) {
             txtTitle.text = note.title
@@ -31,8 +31,8 @@ class NoteAdapter(
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemNoteViewHolder {
+        return ItemNoteViewHolder(
             ItemNoteBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
@@ -41,7 +41,7 @@ class NoteAdapter(
         )
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ItemNoteViewHolder, position: Int) {
         holder.onBind(list[position])
     }
 

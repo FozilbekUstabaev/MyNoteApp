@@ -2,12 +2,12 @@ package com.example.mynoteapp.presentation.ui.fragments.note
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.mynoteapp.presentation.core.Resource
-import com.example.mynoteapp.presentation.core.UIState
 import com.example.mynoteapp.domain.model.Note
 import com.example.mynoteapp.domain.usecase.DeleteNoteUseCase
 import com.example.mynoteapp.domain.usecase.EditNoteUseCase
 import com.example.mynoteapp.domain.usecase.GeAllNotesUseCase
+import com.example.mynoteapp.presentation.core.Resource
+import com.example.mynoteapp.presentation.core.UIState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
